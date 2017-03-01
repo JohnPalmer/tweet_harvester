@@ -67,6 +67,6 @@ class StreamListener(tweepy.StreamListener):
 
 stream_listener = StreamListener()
 stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
-stream.filter(locations=[-180,-90,180,90])
+stream.filter(locations=[2.052498,41.320881,2.228356,41.461511])
 
 
