@@ -67,6 +67,6 @@ class StreamListener(tweepy.StreamListener):
 
 stream_listener = StreamListener()
 stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
-stream.filter(track=["UPF"])
+stream.filter(locations=[-180,-90,180,90])
 
 
