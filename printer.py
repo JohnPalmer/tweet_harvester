@@ -14,7 +14,7 @@ class StreamListener(tweepy.StreamListener):
     def on_status(self, status):
         if status.geo is not None:
         	if status.geo['coordinates'] is not None:
-	    	    print(status.geo['coordinates'][0])
+	    	    print(status)
         return True
     def on_error(self, status_code):
         if status_code == 420:
