@@ -73,7 +73,7 @@ while True:
     try:
         stream.userstream()
 
-    except Exception, e:
+    except Exception as e:
         print "Error. Restarting Stream.... Error: "
         print e.__doc__
         print e.message
