@@ -65,8 +65,17 @@ class StreamListener(tweepy.StreamListener):
         if status_code == 420:
             return False
 
-stream_listener = StreamListener()
-stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
-stream.filter(locations=[2.052498,41.320881,2.228356,41.461511])
+while True:
+    stream_listener = StreamListener()
+    stream = tweepy.Stream(auth=api.auth, listener=stream_listener, timeout=60)
+    stream.filter(locations=[2.052498,41.320881,2.228356,41.461511])
+    
+    try:
+        stream.userstream()
+
+    except Exception, e:
+        print "Error. Restarting Stream.... Error: "
+        print e.__doc__
+        print e.message
 
 
