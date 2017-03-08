@@ -75,7 +75,5 @@ while True:
 
     except Exception as e:
         print("Error. Restarting Stream.... Error: ")
-        print(e.__doc__)
-        print(e.message)
 
 
